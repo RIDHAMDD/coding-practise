@@ -1,0 +1,51 @@
+# Q1)
+### Solve the problem in O(n^2) time. (A Naive Approach)
+Here, we can use a Nested for loop which will lead to the time complexity of this code implementation being `O(n^2)`. The outer loop will act as a still character of string a while the inner loop will be the moving characters loop for string b. We will compare every single character of string `a` with every single character of string `b`. Duplicates might be an issue for this logic to work so, we can remove the character once it`s checked. At last, we print true or false accordingly.
+
+### Solve the problem in O(nlogn) time.
+Here, we can sort both strings using Quick Sort and compare them which will lead to the time complexity of this code implementation being `O(n log n)`. For that first, we will have to convert the strings into a Char Array. For that, we can use a for loop, or else we can just use the `str.toCharArray();` method in the default Java library package. Now, we have to Quicksort both arrays. For that again either we can implement the complete QuickSort algorithm or else we can just use `Arrays.sort(array name);` method in the default `java library package`. Now, we have can compare both arrays and return true or false accordingly.
+
+### Solve the problem in O(n) time. (more efficient solution)
+The method first converts both strings a and b to uppercase to ignore any case differences. Here, we make an array of constant size = 26, which is the number of alphabets available. Each size 26 represents the frequency of each letter in the alphabet. Then we use a for loop from index 0 to the length of the string. Then we Type cast the character at index i of the string to an integer and subtract 65 from it which is the value for Capital A in `ASCII code`. This will return the integer between 0 to 25 which represents characters A to Z respectively. We then use this to increment the value of the array at that index. We do the same for the other string and then at last we compare both arrays using `Arrays.equals(array1, array2);` The time complexity of this algorithm is `O(n)`, where n is the length of the given strings.
+
+# Q2)
+### Solve the problem in O(n^2) time. (A Naive Approach)
+Here, we will use a `Nested For loop` which will lead to the time complexity of this code implementation being `O(n^2)`. The outer loop will act as a still pointer in the array while the inner loop will move around the complete array and later will find the sum and compare it with the target sum given. Here, every single value in the array is `summed` with other values and later is also compared with the target sum to check if they are the same. If it is equal it will `return true` or else it will `return false`.
+
+### Solve the problem in O(n) time. (more efficient solution)
+Here we make a new `HashMap`, where we store the `Element of the array as the key` and `its index as a value`. We use a `for loop` to do this operation and hence the time complexity will be `O(n)`. The algorithm then uses a loop around the array to see if the difference between the `target value x` and `the currently selected element` is present in the HashMap. If so, the code sets the variable `z` to the `index of the current element` and exits the loop by using a `break;` statement. If the index of that difference is not equal to the index of the current element then it `continues;`. Then it `determines what value must be added` to the element at index z in order for it to equal the desired value x. One more time using a `for loop` through the array, the code `determines whether the current element equals the value determined` earlier. If so, the method sets the variable `g` to the index of the currently selected element and exits the loop using `break;`. if the index of that element is not equal to z then it uses `continue;`. Finally, the method `returns an array containing the indices z and g`. The time complexity of this algorithm is `O(n)`, where n is the length of the given array.
+
+# Q3)
+### Solve the problem in O(n^2) time. (A Naive Approach)
+`O(n^2)` solution will be to iterate through the array and for each element, iterate through the array again and count how many times the element appears. If the `count is odd` at the end, return the `element`.
+
+### Solve the problem in O(n log n) time (Extra Credit Question`s Solution).
+`Quick sort` the array in `ascending order` using the built-in `Arrays.sort()` method, which has a time complexity of `O(n log n)`. The code uses a `counter` to count elements in an array from start to end, every time the element changes we `check` if the counter is even or odd using an `if statement`. If true it means it`s an odd counter and then we `return the element` that occurred odd times. Else we `reset the counter` and start counting again for the next element. The time complexity of this code is `O(n log n)` due to the sorting of the array using a `Quick Sort`. However, it has a space complexity of `O(1)` as it only uses a constant amount of extra memory to store the `counter` and `i` variables.
+
+# Q4)
+### Solve the problem in O(n^2) time. (A Naive Approach)
+An `O(n^2)` solution to this problem would be to have a `nested loop` that iterates through `all possible sections` of elements in the array and checks if their `sum is zero`. The outer loop will act as a `still pointer` in the array while the inner loop will `move around the complete array` and later will find the sum of the sections and `compare it with the Zero`. If it finds a pair with a `zero-sum`, it returns `true`. Otherwise, it returns `false`. The time complexity of this solution is `O(n^2)`, where n is the length of the array.
+
+### Solve the problem in O(n) time. (more efficient solution)
+The code uses a `hash set` to store the `sum of all elements up to the current index` in the array. Then we add a `0` to the set so that later we can just check if the calculated sum which might be 0, is present in the set or not. We do so by `Set.contains();` method. Inside the loop. we keep adding the current element at the index to sum so that we have sections starting from `0` to the `index i`. We check if the sum already exists in the set or not(As we have already added the Zero-sum to the set). We return `True or False` accordingly.
+
+# Q5)
+### Solve the problem in O(n^2) time. (A Naive Approach)
+An `O(n^2)` solution to this problem would be to have a `nested loop` that iterates through all possible combinations of pairs available in the array. For each pair, we would then `check if its reverse` exists in the array or not. If so, we add it to the `resulting array`. At last, we return the new array.
+
+### Solve the problem in O(n) time. (more efficient solution)
+The code creates an `empty ArrayList` to store the output of the `reversed pairs`. For each pair of indices, the code checks if the two pairs of integers are `reverses of each other`. If `true`, it `adds both pairs` to the list as arrays of integers using the `list.add();` method. At last, the code returns the list as a `2D array` of integers using the `list.toArray();` method. Because of two nested loops the time complexity is `O(n^2)`. However, since the inner loop starts from i + 1, it only iterates over a smaller portion of the array for each iteration of the outer loop. This reduces the overall time complexity to an amortized time complexity of `O(n)`.
+
+# Q6)
+### Solve the problem in O(n^2) time. (A Naive Approach)
+Here, we use an `empty ArrayList`. We add the elements in the list so that we get a list of all the `unique elements in the array`. Then we use a `nested for loop` to go around the array. The outer loop goes from `0 to the size of the list` while the inner loop iterates through the `full array`. Every time we find a duplicate of the element in the list we add it to the `array`. At last, we return the array. The time complexity will be `O(u*n)`, where u is the number of unique elements in the array or the size of the ArrayList while n is the size of the given array.
+
+### Solve the problem in O(n) time. (more efficient solution)
+Here, we start with creating an `empty HashMap` and an `ArrayList`. We use a `for loop` to iterate through the array and in this loop we follow `2 main operations`. We `add the elements in the list` so that we get a list of all the `unique elements` in the array. Also, we `increment the value of the Map` of that particular element. So, the map value at the end will have a `frequency of every unique element`. Later, we use a `for loop` to iterate through the array, and inside we iterate through the Unique List. We make necessary changes to the Array then. This solution is not `O(n^2)` as If the unique list has more elements then the outer loop has to go fewer times through the Array. As, we increment the outer loop value j, inside the inner loop. This reduces the overall time complexity to an amortized time complexity of `O(n)`.
+
+# Q7)
+### Solve the problem in O(n) time. (A Naive Approach)
+A `naive solution` to this problem would be using a `nested for loop` to `iterate` through each character in string a, and for each character, replace all occurrences of that character in a duplicate string of string a with the `first character` that we find which is at the same index in string b. We also use a set to keep an account of duplicates so, that no previously occurred character in the string is updated again. At last, we compare a `duplicate string` that we created and `string a` and return a `boolean type true or false` of the answer. The time complexity here will be `O(n^2)`.
+
+### Solve the problem in O(n^2) time. (more efficient solution)
+We convert both the `strings to upper case` so there is `no logical error` for the case of the character. Then we create an `empty HashMap` to store a character from string a mapped to a unique character from string b. Then we use `contains method` to check every time any `character occurs` to see if there is a `specific element it is supposed to be `mapped to`. If so, we check if it is `correctly mapped or not` at index i. If there is `no record of the past occurrence` of the character yet. we add that character and its mapped character in the `map for future reference`. We continue the process till the very end. The algorithm is `O(n)` as we just used a for loop for main iterations.
