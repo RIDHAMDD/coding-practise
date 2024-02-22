@@ -1,6 +1,5 @@
 # coding-practise
 Few coding questions, I solved for an class where I prioritize the space and time complexity 
-# Assignment 2
 
 For each problem below, provide writeups of the solutions. Provide a naive solution and then any more efficient solutions you can find. Then, implement the most efficient solution you were able to find. Comment your code well.
 
